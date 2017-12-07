@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Eat Da Burger</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="/assets/css/burger_style.css">
+		<script	src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+	</head>
+	<body>
+		{{{ body }}}
+	<script>
+		$(document).ready(function() {
+			var currentURL = window.location.origin;
+			$('.devour').on("click", function() {
+				$(this).parent().remove();	
+				var burgerID = $(this)[0].previousSibling.attributes[0].value;
+				
+				$.ajax({
+					url: currentURL + "/api/devour",
+					type: "PUT",
+					data: {burgerID : burgerID},
+					success: location.reload(true)
+				});
+			});
+			$('#submit').on("click", function(event) {
+				event.preventDefault();
+				var burgerName = {burgerName : $("#burgerName").val().trim()};
+				$.ajax({
+					url: currentURL + "/api/addBurger",
+					type: "POST",
+					data: burgerName,
+					success: location.reload(true) 
+				});
+			});
+		});
+	</script>
+	</body>
+</html>

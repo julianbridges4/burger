@@ -1,0 +1,88 @@
+body{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background: #e66e66;
+	font-family: Arial;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: auto;
+	align-content: center;
+	background: #fce75b;
+	height: 100vh;
+}
+
+.burgerContainer {
+	display: flex;
+}
+
+.ui {
+	display: flex;
+	flex-direction: column;
+	margin: 50px auto 0px; 
+	/*border: 3px solid purple;*/
+	width: 50%;
+	align-content: center; 	
+}
+
+.ui h1 {
+	display: inline-block;
+	margin: auto;
+}
+
+.input h3 {
+	text-align: center;
+}
+
+.ui img {
+	overflow: hidden;
+	margin: auto;
+}
+
+.input {
+	margin: 0px auto;
+}
+
+.input h1 {
+	display: inline-block;
+}
+
+.burgerContainer {
+}
+
+.eaten,
+.uneaten {
+/*	display: flex;
+	flex-direction: column;
+	align-items: flex-start;*/
+	width: 50%;
+	margin-left: 15%;
+}
+
+.uneatenDiv {
+	width: 80%;
+}
+
+.eaten {
+	flex-wrap: nowrap;
+}
+
+.burgerMade,
+.burgerEaten {
+	margin-top: 25px;
+	background: #eee;
+}
+
+.burgerMade {
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.burgerEaten {
+	width: 80%;
+	padding: 5px;
+}
